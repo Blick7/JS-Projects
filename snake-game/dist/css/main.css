@@ -39,7 +39,7 @@ body {
   background-color: #525053;
 }
 
-.snake-piece {
+.snake-body {
   position: absolute;
   left: 0;
   top: 0;

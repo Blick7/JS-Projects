@@ -1,8 +1,8 @@
-import { snake, drawSnake } from "./snake.js";
+import { snake, drawSnake, updateSnakePosition } from "./snake.js";
 
 const gameBoard = document.querySelector(".game-board");
 let startTimeStamp = null;
-
+let gameBoardWidth = 20;
 // create background dots
 const createDots = () => {
   for (let i = 0; i < 400; i++) {
@@ -28,6 +28,8 @@ window.requestAnimationFrame(gameLoop);
 
 const gameUpdate = () => {
   //
-  console.log("update");
+  gameBoard.innerHTML = "";
+  createDots();
   drawSnake(gameBoard);
+  updateSnakePosition();
 };
