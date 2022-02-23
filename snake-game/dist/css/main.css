@@ -14,6 +14,45 @@ body {
   padding-top: 20px;
 }
 
+.game-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+}
+
+.score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 160px;
+  height: 50px;
+  background-color: #161618;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.score .score-numbers {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: calc(28 / 24 * 100%);
+  color: #fa0556;
+}
+
 .game-board {
   position: relative;
   display: -ms-grid;
@@ -30,6 +69,7 @@ body {
   width: 400px;
   height: 400px;
   overflow: hidden;
+  margin-top: 20px;
 }
 
 .circle {

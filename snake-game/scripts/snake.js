@@ -1,11 +1,10 @@
 import { setDirection } from "./controls.js";
 import { updateFoodPosition, food } from "./food.js";
-
 export let snake = {
   body: [{ x: 10, y: 10 }],
   speed: 6,
 };
-
+export let score = 0;
 export const drawSnake = (gameBoard) => {
   // set snake body elements positions
   snake.body.forEach((element, index) => {
@@ -44,6 +43,7 @@ const eatFood = () => {
   if (snake.body[0].x === food.x && snake.body[0].y === food.y) {
     updateFoodPosition();
     expandSnake();
+    score += food.value;
   }
 };
 

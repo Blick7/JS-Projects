@@ -2,14 +2,14 @@ import {
   snake,
   drawSnake,
   updateSnakePosition,
-  borderMove,
   eatTail,
+  score,
 } from "./snake.js";
-import { drawFood, updateFoodPosition } from "./food.js";
+import { drawFood } from "./food.js";
 
 const gameBoard = document.querySelector(".game-board");
+const scoreBoard = document.querySelector(".score-numbers");
 let startTimeStamp = null;
-let gameBoardWidth = 20;
 let gameOverStatus = false;
 // create background dots
 const createDots = () => {
@@ -45,6 +45,7 @@ const gameUpdate = () => {
   drawFood(gameBoard);
   updateSnakePosition();
   gameOver();
+  scoreBoard.textContent = score;
 };
 
 const gameOver = () => {
