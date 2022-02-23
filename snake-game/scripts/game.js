@@ -1,8 +1,16 @@
-import { snake, drawSnake, updateSnakePosition } from "./snake.js";
+import {
+  snake,
+  drawSnake,
+  updateSnakePosition,
+  borderMove,
+  eatTail,
+} from "./snake.js";
+import { drawFood, updateFoodPosition } from "./food.js";
 
 const gameBoard = document.querySelector(".game-board");
 let startTimeStamp = null;
 let gameBoardWidth = 20;
+let gameOverStatus = false;
 // create background dots
 const createDots = () => {
   for (let i = 0; i < 400; i++) {
@@ -15,10 +23,13 @@ createDots();
 
 // start game loop
 const gameLoop = (timeStamp) => {
-  window.requestAnimationFrame(gameLoop);
+  // check for game over status
+  if (gameOverStatus) {
+    location.reload();
+  }
+
+  window.requestAnimationFrame(gameLoop); // render
   let timeSpent = (timeStamp - startTimeStamp) / 1000; // get seconds
-  /* Logging the time spent in the game loop. */
-  //   console.log(timeSpent);
   if (timeSpent < 1 / snake.speed) return;
 
   startTimeStamp = timeStamp;
@@ -31,5 +42,11 @@ const gameUpdate = () => {
   gameBoard.innerHTML = "";
   createDots();
   drawSnake(gameBoard);
+  drawFood(gameBoard);
   updateSnakePosition();
+  gameOver();
+};
+
+const gameOver = () => {
+  gameOverStatus = eatTail();
 };
