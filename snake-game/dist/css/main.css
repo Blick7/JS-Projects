@@ -31,7 +31,7 @@ body {
   margin-top: 30px;
 }
 
-.score {
+.game-score {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,7 +46,7 @@ body {
           align-items: center;
 }
 
-.score .score-numbers {
+.game-score .score-numbers {
   font-size: 24px;
   font-weight: 700;
   line-height: calc(28 / 24 * 100%);

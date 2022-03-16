@@ -23,11 +23,6 @@ createDots();
 
 // start game loop
 const gameLoop = (timeStamp) => {
-  // check for game over status
-  if (gameOverStatus) {
-    location.reload();
-  }
-
   window.requestAnimationFrame(gameLoop); // render
   let timeSpent = (timeStamp - startTimeStamp) / 1000; // get seconds
   if (timeSpent < 1 / snake.speed) return;
@@ -39,6 +34,10 @@ window.requestAnimationFrame(gameLoop);
 
 const gameUpdate = () => {
   //
+  // check for game over status
+  if (gameOverStatus) {
+    location.reload();
+  }
   gameBoard.innerHTML = "";
   createDots();
   drawSnake(gameBoard);

@@ -29,6 +29,7 @@ export const updateSnakePosition = () => {
   // move head
   snake.body[0].x += setDirection().x;
   snake.body[0].y += setDirection().y;
+  // console.table(snake.body);
 };
 
 export const borderMove = () => {
