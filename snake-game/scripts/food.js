@@ -5,7 +5,7 @@ const getRandomPosition = () => {
 export let food = {
   x: getRandomPosition(),
   y: getRandomPosition(),
-  value: 5,
+  value: 1,
 };
 export const drawFood = (gameBoard) => {
   //
