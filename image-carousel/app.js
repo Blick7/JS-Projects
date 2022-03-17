@@ -5,25 +5,21 @@ const nextBtn = document.querySelector(".nextBtn");
 const prevBtn = document.querySelector(".prevBtn");
 
 const imgSize = sliderImages[0].clientWidth;
-let count = 0;
+let count = 1;
+
+// start from first one, not duplicate
 
 // Event listeners
 nextBtn.addEventListener("click", () => {
-  //   if (count > sliderImages.length - 2) return;
-
-  if (count >= 5) {
-    count = -1;
-    slider.style.transition = "none";
-  }
+  if (count >= sliderImages.length) count = 0;
   slider.style.transition = "transform 0.4s ease-in-out";
-  count++;
   slider.style.transform = "translateX(" + -imgSize * count + "px)";
-  console.log(slider.style.transform);
+  count++;
 });
 
 prevBtn.addEventListener("click", () => {
-  if (count < 1) return;
-  console.log(count);
+  //   if (count < 1) return;
+  if (count <= 0) count = sliderImages.length;
   slider.style.transition = "transform 0.4s ease-in-out";
   count--;
   slider.style.transform = "translateX(" + -imgSize * count + "px)";

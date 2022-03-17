@@ -2,6 +2,9 @@
   width: 900.34px;
   margin: auto;
   overflow: hidden;
+  position: relative;
+  margin-top: 40px;
+  border: 3px solid #000;
 }
 .gallery-slider {
   display: flex;
@@ -16,12 +19,31 @@
 }
 
 .prevBtn {
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  left: 20px;
+  top: 45%;
+  background: none;
+  border: none;
+  font-size: 40px;
+  opacity: 0.5;
+  transition: 0.5s;
 }
-.fa-solid {
+.prevBtn:hover,
+.nextBtn:hover {
+  transform: scale(1.5);
 }
-.fa-arrow-left {
-}
+
 .nextBtn {
-}
-.fa-arrow-right {
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  right: 20px;
+  top: 45%;
+  background: none;
+  border: none;
+  font-size: 40px;
+  opacity: 0.5;
+  transition: 0.5s;
 }
