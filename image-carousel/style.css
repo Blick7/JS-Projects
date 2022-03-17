@@ -1,0 +1,27 @@
+.gallery-container {
+  width: 900.34px;
+  margin: auto;
+  overflow: hidden;
+}
+.gallery-slider {
+  display: flex;
+  width: 100%;
+  height: 600px;
+}
+
+.gallery-image {
+  width: 900px;
+  height: 600px;
+  /* opacity: 0; */
+}
+
+.prevBtn {
+}
+.fa-solid {
+}
+.fa-arrow-left {
+}
+.nextBtn {
+}
+.fa-arrow-right {
+}
