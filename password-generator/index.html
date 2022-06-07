@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="./index.js" defer></script>
+  <title>Password generator</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="title">Generate a Secure Password</h1>
+    <div class="display">
+      <div class="output">
+        <div class="password"></div>
+        <div class="copy"></div>
+        <div class="generate"></div>
+      </div>
+      <div class="password-strength"></div>
+    </div>
+    <div class="settings">
+      <h2 class="settings__title">Customize your password</h2>
+      <div class="settings__pass-length">
+        <h4>Password length</h4>
+        <div class="pass-length__container">
+          <div class="length-number">10</div>
+          <input type="range" min="5" max="40" class="input-password">
+        </div>
+      </div>
+      <div class="settings__additional">
+        <input type="checkbox" class="digits" id="digits">
+        <label for="digits">Digits</label>
+
+        <input type="checkbox" class="letters" id="letters">
+        <label for="letters">Letters</label>
+
+        <input type="checkbox" class="lowercase" id="lowercase">
+        <label for="letters">Lowercase</label>
+
+        <input type="checkbox" class="uppercase" id="uppercase">
+        <label for="letters">Uppercase</label>
+
+        <input type="checkbox" class="special-characters" id="special-characters">
+        <label for="letters">Special characters</label>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
