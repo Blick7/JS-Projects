@@ -5,6 +5,7 @@ const numberBtns = document.querySelectorAll('.number');
 const clearAll = document.querySelector('.clear-all');
 const clear = document.querySelector('.clear');
 const equals = document.querySelector('.equals');
+const percent = document.querySelector('.percent');
 
 class Calculator {
   constructor(firstNumberHtmlElem, secondNumberHtmlElem) {
@@ -16,7 +17,7 @@ class Calculator {
   clearDisplay() {
     this.firstNumber = '';
     this.secondNumber = '';
-    this.operation = null;
+    this.operation = undefined;
   }
 
   deleteLastSymbol() {
@@ -45,7 +46,9 @@ class Calculator {
     const first = Number(this.firstNumber);
     const second = Number(this.secondNumber);
 
-    if (isNaN(first) || isNaN(second)) return;
+    if (isNaN(first) || isNaN(second)) {
+      return;
+    }
 
     switch (this.operation) {
       case '/':
@@ -60,20 +63,79 @@ class Calculator {
       case '+':
         result = second + first;
         break;
-      case '%': // todo: make it separate func
-        result = first / 100;
+        // case '%':
+        //   result = second / first;
+        //   console.log(this.operation);
         break;
       default:
         return;
     }
     this.firstNumber = result;
-    this.operation = null;
+    this.operation = undefined;
     this.secondNumber = '';
   }
 
+  calcPercent() {
+    let result;
+    const first = Number(this.firstNumber);
+    const second = Number(this.secondNumber);
+
+    if (this.operation === undefined) {
+      result = first / 100;
+    }
+
+    switch (this.operation) {
+      case '/':
+        result = (second * 100) / first;
+        break;
+      case '*':
+        result = second * (first / 100);
+        break;
+      case '-':
+        result = second - (first / 100) * second;
+        break;
+      case '+':
+        result = second + (first / 100) * second;
+        break;
+      default:
+        return;
+    }
+    this.firstNumber = result;
+    this.operation = undefined;
+    this.secondNumber = '';
+  }
+
+  displayNumber(number) {
+    const stringNum = number.toString();
+    const intNum = parseFloat(stringNum.split('.')[0]);
+    const decimalNum = stringNum.split('.')[1];
+    let intDisplay;
+    if (isNaN(intNum)) {
+      intDisplay = '';
+    } else {
+      intDisplay = intNum.toLocaleString('en', { maximumFractionDigits: 0 });
+    }
+
+    if (decimalNum != null) {
+      return `${intDisplay}.${decimalNum}`;
+    } else {
+      return intDisplay;
+    }
+    // const floatNum = parseFloat(number);
+    // if (isNaN(floatNum)) return '';
+    // return floatNum.toLocaleString('en');
+  }
+
   displayUpdate() {
-    this.firstNumberHtmlElem.textContent = this.firstNumber;
-    this.secondNumberHtmlElem.textContent = this.secondNumber;
+    this.firstNumberHtmlElem.textContent = this.displayNumber(this.firstNumber);
+    // this.secondNumberHtmlElem.textContent = this.secondNumber;
+    if (this.operation != undefined) {
+      this.secondNumberHtmlElem.textContent = `${this.displayNumber(
+        this.secondNumber
+      )} ${this.operation}`;
+    } else {
+      this.secondNumberHtmlElem.textContent = '';
+    }
   }
 }
 
@@ -99,12 +161,16 @@ equals.addEventListener('click', () => {
 });
 
 clearAll.addEventListener('click', () => {
-  console.log(clearAll);
   calculator.clearDisplay();
   calculator.displayUpdate();
 });
 
 clear.addEventListener('click', () => {
   calculator.deleteLastSymbol();
+  calculator.displayUpdate();
+});
+
+percent.addEventListener('click', () => {
+  calculator.calcPercent();
   calculator.displayUpdate();
 });
