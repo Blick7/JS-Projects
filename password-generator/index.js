@@ -85,12 +85,19 @@ const generatePassword = () => {
 output.addEventListener('click', (event) => {
   if (event.target.classList.contains('password')) {
     navigator.clipboard.writeText(password.textContent);
+    const tooltip = document.querySelector('.tooltip-pass');
+    tooltip.classList.add('tooltip--active');
+    setTimeout(() => {
+      tooltip.classList.remove('tooltip--active');
+    }, 1000);
   }
-  const tooltip = document.querySelector('.tooltip-pass');
-  tooltip.classList.add('tooltip--active');
-  setTimeout(() => {
-    tooltip.classList.remove('tooltip--active');
-  }, 1000);
+  if (event.target.classList.contains('copy')) {
+    const tooltip = document.querySelector('.tooltip-pass');
+    tooltip.classList.add('tooltip--active');
+    setTimeout(() => {
+      tooltip.classList.remove('tooltip--active');
+    }, 1000);
+  }
 });
 
 generatePassword(); // generate password by default
