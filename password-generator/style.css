@@ -46,6 +46,11 @@ body {
   cursor: pointer;
 }
 
+.password--empty {
+  color: hsl(0, 100%, 40%);
+  font-weight: bold;
+}
+
 .tooltip-pass {
   visibility: hidden;
   background-color: rgb(12, 12, 12, 0.6);

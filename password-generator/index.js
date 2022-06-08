@@ -80,6 +80,14 @@ const generatePassword = () => {
   if (arr == 0) {
     password.textContent = '';
   } else password.textContent = generatedPass;
+
+  if (password.textContent == '') {
+    password.textContent = 'CHOOSE OPTION BELOW';
+    password.classList.add('password--empty');
+    console.log('hey');
+  } else {
+    password.classList.remove('password--empty');
+  }
 };
 
 output.addEventListener('click', (event) => {
