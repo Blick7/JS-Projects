@@ -53,7 +53,16 @@ html {
   width: 6rem;
   padding: 0.5rem 1rem;
   font-weight: 700;
+
+  cursor: pointer;
 }
+
+.top-block__button:hover {
+  background-color: hsl(250, 20%, 20%);
+  color: #fff;
+  transition: 0.4s;
+}
+
 .top-block__icon {
   padding-right: 0.5rem;
 }
@@ -81,23 +90,30 @@ html {
 }
 .session-title {
   font-weight: 700;
+  font-size: 1.2rem;
 }
 .time-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
+  font-size: 1.2rem;
 }
 .time-container__button {
   background-color: hsl(350, 50%, 50%);
   padding: 0.2rem;
   border-radius: 40px;
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.5rem;
+  height: 1.5rem;
   justify-content: center;
   align-items: center;
   text-align: center;
   cursor: pointer;
+}
+
+.time-container__button:hover {
+  background-color: hsl(350, 90%, 50%);
+  transition: 0.4s;
 }
 
 .button-arrow {
