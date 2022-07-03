@@ -130,3 +130,8 @@ html {
 .time-container__break {
   padding: 0 0.6rem;
 }
+
+/* prevent all clicks */
+.fa-solid {
+  pointer-events: none;
+}
