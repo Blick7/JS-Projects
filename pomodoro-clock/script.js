@@ -74,10 +74,14 @@ const startTimer = () => {
       '<i class="fa-solid fa-play top-block__icon"></i>Play';
     soundActive = false;
     timerActive = false;
+
+    sessionBtns.forEach((button) => {
+      button.addEventListener('click', changeTime);
+    });
   } else {
     soundActive = true;
     timerActive = true;
-    interval = setInterval(setTime, 10);
+    interval = setInterval(setTime, 1000);
     playPauseBtn.innerHTML =
       '<i class="fa-solid fa-pause top-block__icon"></i> Stop';
 
