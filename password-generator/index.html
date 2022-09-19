@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://kit.fontawesome.com/a682f71039.js" crossorigin="anonymous"></script>
+  <script src="./index.js" defer></script>
+  <title>Password generator</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="title">Generate a secure password</h1>
+    <div class="display">
+      <div class="output">
+        <div class="password"></div>
+        <span class="tooltip-pass">Copied</span>
+        <div class="copy"> <i class="fa-solid fa-copy"> </i></div>
+        <div class="generate"><i class="fa-solid fa-arrows-rotate"></i></div>
+      </div>
+      <div class="password-strength"></div>
+    </div>
+    <div class="settings">
+      <h2 class="settings__title">Customize your password</h2>
+      <div class="settings__pass-length">
+        <p class="pass-length__title">Password length</p>
+        <div class="pass-length__container">
+          <div class="length-number">10</div>
+          <div class="range__slider">
+            <div class="range"></div>
+            <input type="range" min="0" max="40" class="input-password">
+          </div>
+        </div>
+      </div>
+      <div class="settings__additional">
+        <div>
+          <input type="checkbox" class="digits active" id="digits" checked>
+          <label for="digits">Digits</label>
+        </div>
+        <div>
+          <input type="checkbox" class="lowercase" id="lowercase">
+          <label for="lowercase">Lowercase letters</label>
+        </div>
+        <div>
+          <input type="checkbox" class="uppercase" id="uppercase">
+          <label for="uppercase">Uppercase letters</label>
+        </div>
+        <div>
+          <input type="checkbox" class="specialChars" id="specialChars">
+          <label for="specialChars">Special characters</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
