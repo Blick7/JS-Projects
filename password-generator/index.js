@@ -21,7 +21,6 @@ passLength.textContent = inputPassword.value;
 inputPassword.addEventListener('input', () => {
   passRange.style.width = `${(inputPassword.value * 100) / inputPassword.max}%`;
   passLength.textContent = inputPassword.value;
-
   if (inputPassword.value < 5) {
     inputPassword.value = 5;
     passLength.textContent = inputPassword.value;
@@ -29,6 +28,7 @@ inputPassword.addEventListener('input', () => {
       (inputPassword.value * 100) / inputPassword.max
     }%`;
   }
+  generatePassword();
 });
 
 // add toggle switch buttons active status
