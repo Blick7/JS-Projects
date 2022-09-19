@@ -1,0 +1,95 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url('') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* body {
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url('https://images.unsplash.com/photo-1508750890367-ae51d0ef8cb4?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzg3OTh8MHwxfHNlYXJjaHwxMXx8QmVybGlufGVufDB8fHx8MTY1NTU0NTgzNQ&ixlib=rb-1.2.1&q=80');
+} */
+
+.container {
+  min-width: 250px;
+  min-height: 250px;
+  width: 25%;
+  height: 40%;
+  background-color: hsla(100,10%,10%, 0.9);
+  margin: 0 auto;
+  margin-top: 10%;
+  color: hsl(0, 0%, 100%);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.form-search {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.form-input {
+  background-color:hsla(0, 0%, 40%, 0.4);
+  outline: none;
+  border-radius: 30px;
+  border: none;
+  height: 2.5rem;
+  font-size: 1.2rem;
+  color: hsl(0, 0%, 100%);
+  padding: 0 10px;
+  margin-right: 1rem;
+  width: 75%
+}
+
+.button-search {
+  width: 40px;
+  height: 40px;
+  background: url('./assets/svg/icons8-search.svg');
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color:hsla(0, 0%, 40%, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+.city-name {
+  padding-top: 1.2rem;
+}
+
+.temperature {
+  font-size: 2.4rem;
+  padding-top: 0.6rem;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-info > div {
+  /* padding-top: 0.3rem; */
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+}
+
+.weather-info__weather {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-info__icon {
+  width: 80px;
+  height: 80px;
+}
