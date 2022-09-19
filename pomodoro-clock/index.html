@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="./script.js" defer></script>
+  <script src="https://kit.fontawesome.com/a682f71039.js" crossorigin="anonymous"></script>
+  <title>Pomodoro Clock</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="title">Pomodoro Timer</h1>
+
+    <div class="top-block">
+      <h2 class="top-block__title">Session</h2>
+      <div class="top-block__time"><span class="time-minutes">25</span>:<span class="time-seconds">00</span></div>
+      <div class="top-block__buttons">
+        <div class="buttons__play-pause top-block__button"><i class="fa-solid fa-play top-block__icon"></i>Play</div>
+        <div class="buttons__reset top-block__button"><i class="fa-solid fa-arrows-rotate top-block__icon"></i>Reset
+        </div>
+      </div>
+      <div class="top-block__sound-icon"><i class="fa-solid fa-volume-high"></i></div>
+      <div class="top-block__info">
+        <i class="fa-solid fa-circle-info"></i>
+        <span class="info__text">
+          The Pomodoro technique uses a timer to break down work into intervals, traditionally twenty-five minutes in
+          length, each separated by a short break. Each interval is known as a Pomodoro, from the Italian word for
+          ‘tomato’, after the tomato-shaped kitchen timer that Cirillo used as a university student.
+        </span>
+      </div>
+    </div>
+
+    <div class="bottom-block">
+      <div class="bottom-block__container">
+        <div class="session-title">Session Length</div>
+        <div class="time-container">
+          <div class="time-container__button" id="lengthBtn-up"><i class="fa-solid fa-arrow-up button-arrow"></i></div>
+          <div class="time-container__session"><span id="length-time">25</span> min</div>
+          <div class="time-container__button" id="lengthBtn-down"><i class="fa-solid fa-arrow-down button-arrow"></i>
+          </div>
+
+        </div>
+      </div>
+      <div class="bottom-block__container">
+        <div class="session-title">Session Break</div>
+        <div class="time-container">
+          <div class="time-container__button" id="breakBtn-up"><i class="fa-solid fa-arrow-up button-arrow"></i></div>
+          <div class="time-container__break"><span id="break-time">5</span> min</div>
+          <div class="time-container__button" id="breakBtn-down"><i class="fa-solid fa-arrow-down button-arrow"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
